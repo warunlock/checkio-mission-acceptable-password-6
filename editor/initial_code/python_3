@@ -13,4 +13,5 @@ if __name__ == '__main__':
     assert is_acceptable_password('ashort') == False
     assert is_acceptable_password('muchlonger5') == True
     assert is_acceptable_password('sh5') == False
+    assert is_acceptable_password('1234567') == False
     print("Coding complete? Click 'Check' to earn cool rewards!")

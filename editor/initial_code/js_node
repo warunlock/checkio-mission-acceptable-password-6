@@ -17,6 +17,7 @@ if (!global.is_checking) {
     assert.equal(isAcceptablePassword('ashort'), false);
     assert.equal(isAcceptablePassword('muchlonger5'), true);
     assert.equal(isAcceptablePassword('sh5'), false);
+    assert.equal(isAcceptablePassword('1234567'), false);
 
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }

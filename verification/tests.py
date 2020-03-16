@@ -29,7 +29,11 @@ TESTS = {
         {
             "input": ['sh5'],
             "answer": False,
-        }
+        },
+        {
+            "input": ['1234567'],
+            "answer": False,
+        },
     ],
     "Extra": [
         {
