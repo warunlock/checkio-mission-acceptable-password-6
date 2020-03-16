@@ -1,20 +1,28 @@
 <!-- Describe task in general -->
 
 <p>
-    Sum two passed ints
+    <i>You are the beginning of password series. Every mission will be based on the previous one, and also might be a little bit more complex</i>
 </p>
 
-<p style="text-align: center;">
-    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
+<p> 
+    In this mission you need to create a password verification function.
 </p>
+
+<p>Those are verification conditions:</p>
+
+<ul>
+    <li>length should be bigger than 6</li>
+</ul>
+
+
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> Two arguments. Both are ints.
+    <strong>Input: </strong> String.
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> Bool. 
 </p>
 
 
@@ -25,28 +33,18 @@
     </p>
 
 {% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+<pre class="brush: javascript">isAcceptablePassword('short') == false
+isAcceptablePassword('muchlonger') == true
 </pre>
 {% else %}
-<pre class="brush: python">sum_two(2, 3) == 5
-sum_two(5, 7) == 12
+<pre class="brush: python">is_acceptable_password('short') == False
+is_acceptable_password('muchlonger') == True
 </pre>
 {% endif %}
 </div>
 
 
-<!-- Here you can explain how it can be used in development -->
-<!-- The section is optional -->
 <p class="for_info_only">
-
     <strong>How it’s used: </strong>
-    <i>(math is used everywhere)</i>
-</p>
-
-<!-- Here you can explain some constraints for input-->
-<!-- The section is optional -->
-<p>
-    <strong>Precondition:</strong>
-    <i>both given ints should be between -1000 and 1000</i>
+    <i>For password verification form. And also it is goot to learn how task can be evaluate.</i>
 </p>

@@ -1,16 +1,13 @@
-def sum_two(a, b):
-    """
-        sums two passed arguments
-    """
+def is_acceptable_password(password: str) -> bool:
     # your code here
-    return None
+    return True
 
 
 if __name__ == '__main__':
     print("Example:")
-    print(sum_two(3, 2))
-    
+    print(is_acceptable_password('short'))
+
     # These "asserts" are used for self-checking and not for an auto-testing
-    assert sum_two(3, 2) == 5, "First"
-    assert sum_two(5, 7) == 12, "Second"
+    assert is_acceptable_password('short') == False
+    assert is_acceptable_password('muchlonger') == True
     print("Coding complete? Click 'Check' to earn cool rewards!")
