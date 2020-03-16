@@ -42,6 +42,18 @@ TESTS = {
             "input": ['12345678910'],
             "answer": True,
         },
+        {
+            "input": ['password12345'],
+            "answer": False,
+        },
+        {
+            "input": ['PASSWORD12345'],
+            "answer": False,
+        },
+        {
+            "input": ['pass1234word'],
+            "answer": True,
+        },
     ],
     "Extra": [
         {
