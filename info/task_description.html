@@ -1,9 +1,5 @@
 <!-- Describe task in general -->
 
-<p>
-    <i>You are the beginning of password series. Every mission will be based on the previous one, and also might be a little bit more complex</i>
-</p>
-
 <p> 
     In this mission you need to create a password verification function.
 </p>
@@ -12,6 +8,7 @@
 
 <ul>
     <li>length should be bigger than 6</li>
+    <li>contains at least one digit</li>
 </ul>
 
 
@@ -34,11 +31,17 @@
 
 {% if interpreter.slug == "js-node" %}
 <pre class="brush: javascript">isAcceptablePassword('short') == false
-isAcceptablePassword('muchlonger') == true
+isAcceptablePassword('muchlonger') == false
+isAcceptablePassword('ashort') == false
+isAcceptablePassword('muchlonger5') == true
+isAcceptablePassword('sh5') == false
 </pre>
 {% else %}
 <pre class="brush: python">is_acceptable_password('short') == False
-is_acceptable_password('muchlonger') == True
+is_acceptable_password('muchlonger') == False
+is_acceptable_password('ashort') == False
+is_acceptable_password('muchlonger5') == True
+is_acceptable_password('sh5') == False
 </pre>
 {% endif %}
 </div>

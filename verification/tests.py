@@ -16,17 +16,25 @@ TESTS = {
         },
         {
             "input": ['muchlonger'],
-            "answer": True,
-        }
+            "answer": False,
+        },
         {
             "input": ['ashort'],
+            "answer": False,
+        },
+        {
+            "input": ['muchlonger5'],
+            "answer": True,
+        },
+        {
+            "input": ['sh5'],
             "answer": False,
         }
     ],
     "Extra": [
         {
             "input": ['this is password'],
-            "answer": True,
+            "answer": False,
         }
     ]
 }

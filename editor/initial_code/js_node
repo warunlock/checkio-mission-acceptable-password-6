@@ -13,7 +13,10 @@ if (!global.is_checking) {
 
     // These "asserts" are used for self-checking
     assert.equal(isAcceptablePassword('short'), false);
-    assert.equal(isAcceptablePassword('muchlonger'), true);
+    assert.equal(isAcceptablePassword('muchlonger'), false);
+    assert.equal(isAcceptablePassword('ashort'), false);
+    assert.equal(isAcceptablePassword('muchlonger5'), true);
+    assert.equal(isAcceptablePassword('sh5'), false);
 
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
