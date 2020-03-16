@@ -54,6 +54,14 @@ TESTS = {
             "input": ['pass1234word'],
             "answer": True,
         },
+        {
+            "input": ['aaaaaa1'],
+            "answer": False,
+        },
+        {
+            "input": ['aaaaaabbbbb'],
+            "answer": False,
+        },
     ],
     "Extra": [
         {

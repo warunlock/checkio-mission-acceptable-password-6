@@ -19,4 +19,6 @@ if __name__ == '__main__':
     assert is_acceptable_password('password12345') == False
     assert is_acceptable_password('PASSWORD12345') == False
     assert is_acceptable_password('pass1234word') == True
+    assert is_acceptable_password('aaaaaa1') == False
+    assert is_acceptable_password('aaaaaabbbbb') == False
     print("Coding complete? Click 'Check' to earn cool rewards!")

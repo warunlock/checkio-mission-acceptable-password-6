@@ -23,6 +23,8 @@ if (!global.is_checking) {
     assert.equal(isAcceptablePassword('password12345'), false);
     assert.equal(isAcceptablePassword('PASSWORD12345'), false);
     assert.equal(isAcceptablePassword('pass1234word'), true);
+    assert.equal(isAcceptablePassword('aaaaaa1'), false);
+    assert.equal(isAcceptablePassword('aaaaaabbbbb'), false);
 
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
