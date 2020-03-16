@@ -15,8 +15,12 @@ TESTS = {
             "answer": False,
         },
         {
+            "input": ['short54'],
+            "answer": True,
+        },
+        {
             "input": ['muchlonger'],
-            "answer": False,
+            "answer": True,
         },
         {
             "input": ['ashort'],
@@ -34,11 +38,15 @@ TESTS = {
             "input": ['1234567'],
             "answer": False,
         },
+        {
+            "input": ['12345678910'],
+            "answer": True,
+        },
     ],
     "Extra": [
         {
             "input": ['this is password'],
-            "answer": False,
+            "answer": True,
         }
     ]
 }
