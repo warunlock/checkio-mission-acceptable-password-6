@@ -40,7 +40,7 @@ TESTS = {
         },
         {
             "input": ['12345678910'],
-            "answer": False,
+            "answer": True,
         },
         {
             "input": ['password12345'],
