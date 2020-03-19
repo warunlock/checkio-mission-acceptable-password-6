@@ -40,7 +40,7 @@ TESTS = {
         },
         {
             "input": ['12345678910'],
-            "answer": True,
+            "answer": False,
         },
         {
             "input": ['password12345'],
@@ -61,6 +61,18 @@ TESTS = {
         {
             "input": ['aaaaaabbbbb'],
             "answer": False,
+        },
+        {
+            "input": ['aaaaaabb1'],
+            "answer": True,
+        },
+        {
+            "input": ['abc1'],
+            "answer": False,
+        },
+        {
+            "input": ['abbcc12'],
+            "answer": True,
         },
     ],
     "Extra": [
