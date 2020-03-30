@@ -19,7 +19,7 @@ if (!global.is_checking) {
     assert.equal(isAcceptablePassword('muchlonger5'), true);
     assert.equal(isAcceptablePassword('sh5'), false);
     assert.equal(isAcceptablePassword('1234567'), false);
-    assert.equal(isAcceptablePassword('12345678910'), false);
+    assert.equal(isAcceptablePassword('12345678910'), true);
     assert.equal(isAcceptablePassword('password12345'), false);
     assert.equal(isAcceptablePassword('PASSWORD12345'), false);
     assert.equal(isAcceptablePassword('pass1234word'), true);
