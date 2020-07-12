@@ -74,6 +74,10 @@ TESTS = {
             "input": ['abbcc12'],
             "answer": True,
         },
+        {
+            "input": ['aaaaaaabbaaaaaaaab'],
+            "answer": False,
+        },
     ],
     "Extra": [
         {
