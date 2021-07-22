@@ -1,16 +1,6 @@
-"use strict";
-
-function isAcceptablePassword(a) {
-    // your code here
-    return undefined;
-}
-
 var assert = require('assert');
 
 if (!global.is_checking) {
-    console.log('Example:');
-    console.log(isAcceptablePassword('short'));
-
     // These "asserts" are used for self-checking
     assert.equal(isAcceptablePassword('short'), false);
     assert.equal(isAcceptablePassword('short54'), true);
