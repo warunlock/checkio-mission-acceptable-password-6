@@ -1,0 +1,175 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        Let's continue with the solution from hints of the previous mission in
+        the series.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password) > 9: # cond4    
+        cond2 = cond3 = True
+    cond5 = 'password' not in password.lower()
+        
+    return all([cond1, cond2, cond3, cond5])        
+        </pre>
+        In this mission you should add to this solution checking if password
+        contains at least three distinct characters.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What should I start from?
+    </div>
+    <div class="answer">
+        To count the number of elements in sequence just use len() function and 
+        it should be bigger then 2.
+    <br />
+    <br />
+        <pre class="brush: python">
+cond6 = len(...) > 2        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok. But I need to count only unique elements. How to do this?
+    </div>
+    <div class="answer">
+        Read about <a target="_blank" href="https://www.w3schools.com/python/python_sets.asp">sets</a>.
+        It allows only distinct elements.
+        <br />
+        <br />
+        <pre class="brush: python">
+ar = [1, 2, 3, 2, 3]
+print(set(ar))
+
+# output
+{1, 3, 2}
+        </pre>
+        You should create set from your password and use it as argument in len().
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me the whole line please.
+    </div>
+    <div class="answer">
+        Look:
+    <br />
+    <br />
+        <pre class="brush: python">
+cond6 = len(set(password)) > 2        
+        </pre>
+        And don't forget to add your new condition into all() function in return.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        Here it is:
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+    
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password) > 9: # cond4    
+        cond2 = cond3 = True
+    cond5 = 'password' not in password.lower()
+    cond6 = len(set(password)) > 2
+        
+    return all([cond1, cond2, cond3, cond5, cond6])     
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real Python Ninnjaa!
+    </div>
+    <div class="answer">
+        Sure, grab it!<br />
+        Using dictionary to store conditions in text as keys, and conditional
+        expressions as values.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    conditions = {}
+    conditions['length is bigger than 6'] = len(password) > 6
+    conditions['has at least 1 digit'] = any([ch.isdigit() for ch in password])
+    conditions['not just digits'] = any([not ch.isdigit() for ch in password])
+    conditions['no word "password"'] = 'password' not in password.lower()
+    conditions['3 different characters'] = len(set(password)) >= 3
+    if len(password) > 9:
+        del conditions['has at least 1 digit']
+        del conditions['not just digits']
+
+    return all(conditions.values())
+        </pre>
+        If you still need all checking functions. Using previous function in next
+        adding new condition:
+        <br />
+        <br />
+        <pre class="brush: python">            
+def is_acceptable_passwordI(password: str) -> bool:
+    return len(password) > 6
+        
+def is_acceptable_passwordII(password):
+    return is_acceptable_passwordI(password) and any([c in '0123456789' for c in password])
+
+def is_acceptable_passwordIII(password):
+    return is_acceptable_passwordII(password) and not all([c in '0123456789' for c in password])
+
+def is_acceptable_passwordIV(password):
+    return is_acceptable_passwordIII(password) or len(password) > 9
+
+def is_acceptable_passwordV(password):
+    return is_acceptable_passwordIV(password) and not 'password' in password.lower()
+
+def is_acceptable_password(password):
+    return is_acceptable_passwordV(password) and len(set(list(password))) >= 3
+        </pre>
+        Using regular expressions module, look for substring bigger then 6, with
+        digit and not digit character or substring bigger then 9. Both should not 
+        contain 'password'.
+        <br />
+        <br />
+        <pre class="brush: python">
+import re
+
+
+def is_acceptable_password(p):
+
+    return (bool(re.match(r'(?=.{6,})(?=.*\d.*)(?=.*\D.*)', p)) or           \
+    bool(re.match(r'.{9,}', p))) and not bool(re.search(r'(?i)password', p)) \
+    and len(set(p)) >= 3        
+        </pre>
+        <br />
+        <br />
+        Click "Best solutions" at mission menu and see a lot of other
+        interesting solutions!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it! Congratulations on passing the series!
+    </div>
+</div>
+</body>
