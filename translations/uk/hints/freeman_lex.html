@@ -1,0 +1,171 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Я уявлення не маю, як почати розв'язування цієї місії.
+    </div>
+    <div class="answer">
+        Давай продовжимо розв'язок з останньої підказки попередньої місії в серії.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password) > 9: # cond4    
+        cond2 = cond3 = True
+    cond5 = 'password' not in password.lower()
+        
+    return all([cond1, cond2, cond3, cond5])        
+        </pre>
+        У цій місії тобі слід додати до розв'язку перевірку, що пароль містить
+        хоча б 3 різних символи.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        З чого мені почати?
+    </div>
+    <div class="answer">
+        Щоб порахувати кількість елементів у якійсь послідовності, використай
+        функцію len() і результат має бути більший 2.
+    <br />
+    <br />
+        <pre class="brush: python">
+cond6 = len(...) > 2        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Добре. Але ж мені слід порахувати лише унікальні елементи. Як це зробити?
+    </div>
+    <div class="answer">
+        Прочитай про <a target="_blank" href="https://www.w3schools.com/python/python_sets.asp">множини</a>.
+        Вони зберігають лише унікальні елементи.
+        <br />
+        <br />
+        <pre class="brush: python">
+ar = [1, 2, 3, 2, 3]
+print(set(ar))
+
+# output
+{1, 3, 2}
+        </pre>
+        Тобі слід створити множину з твого пароля і використати її як аргументи в len().
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Покажи мені весь вираз будь ласка.
+    </div>
+    <div class="answer">
+        Дивись:
+    <br />
+    <br />
+        <pre class="brush: python">
+cond6 = len(set(password)) > 2        
+        </pre>
+        І не забудь додати твою нову умову в функцію all() в return.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        То як мій остаточний розв'язок має виглядати?
+    </div>
+    <div class="answer">
+        Ось він:
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+    
+    cond1 = len(password) > 6
+    cond2 = any(char.isdigit() for char in password)
+    cond3 = any(char.isalpha() for char in password)
+    if len(password) > 9: # cond4    
+        cond2 = cond3 = True
+    cond5 = 'password' not in password.lower()
+    cond6 = len(set(password)) > 2
+        
+    return all([cond1, cond2, cond3, cond5, cond6])     
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Покажи мені більше розв'язків!<br />
+        Адже я хочу стати справжнім Python Ніндзею!
+    </div>
+    <div class="answer">
+        Звісно, тримай!<br />
+        Використання словника для зберігання умов у вигляді тексту як ключів і 
+        умовних виразів як значень.
+        <br />
+        <br />
+        <pre class="brush: python">
+def is_acceptable_password(password: str) -> bool:
+
+    conditions = {}
+    conditions['length is bigger than 6'] = len(password) > 6
+    conditions['has at least 1 digit'] = any([ch.isdigit() for ch in password])
+    conditions['not just digits'] = any([not ch.isdigit() for ch in password])
+    conditions['no word "password"'] = 'password' not in password.lower()
+    conditions['3 different characters'] = len(set(password)) >= 3
+    if len(password) > 9:
+        del conditions['has at least 1 digit']
+        del conditions['not just digits']
+
+    return all(conditions.values())
+        </pre>
+        Якщо тобі досі потрібні всі функції перевірки. Використання попередньої
+        функції у наступній із додаванням нової умови:
+        <br />
+        <br />
+        <pre class="brush: python">            
+def is_acceptable_passwordI(password: str) -> bool:
+    return len(password) > 6
+        
+def is_acceptable_passwordII(password):
+    return is_acceptable_passwordI(password) and any([c in '0123456789' for c in password])
+
+def is_acceptable_passwordIII(password):
+    return is_acceptable_passwordII(password) and not all([c in '0123456789' for c in password])
+
+def is_acceptable_passwordIV(password):
+    return is_acceptable_passwordIII(password) or len(password) > 9
+
+def is_acceptable_passwordV(password):
+    return is_acceptable_passwordIV(password) and not 'password' in password.lower()
+
+def is_acceptable_password(password):
+    return is_acceptable_passwordV(password) and len(set(list(password))) >= 3
+        </pre>
+        Використання модуля регулярних виразів, пошук рядка із довжиною більше 6,
+        з цифрою і буквою або рядка довжиною більше 9. В обох варіантах рядок не
+        повинен містити слово 'password'.
+        <br />
+        <br />
+        <pre class="brush: python">
+import re
+
+
+def is_acceptable_password(p):
+
+    return (bool(re.match(r'(?=.{6,})(?=.*\d.*)(?=.*\D.*)', p)) or           \
+    bool(re.match(r'.{9,}', p))) and not bool(re.search(r'(?i)password', p)) \
+    and len(set(p)) >= 3        
+        </pre>
+        Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Дякую! Тепер я знаю і розумію більше! Все працює як слід!
+    </div>
+    <div class="answer">
+        Приємно це чути! Мої привітання із завершенням серії!
+    </div>
+</div>
+</body>
