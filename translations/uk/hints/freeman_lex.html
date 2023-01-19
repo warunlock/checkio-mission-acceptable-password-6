@@ -1,12 +1,14 @@
 <body data-author="freeman_lex">
 <div class="question-answer">
     <div class="question">
-        Я уявлення не маю, як почати розв'язування цієї місії.
+        <p>
+            Я уявлення не маю, як почати розв'язування цієї місії.
+        </p>
     </div>
     <div class="answer">
-        Давай продовжимо розв'язок з останньої підказки попередньої місії в серії.
-        <br />
-        <br />
+        <p>
+            Давай продовжимо розв'язок з останньої підказки попередньої місії в серії.
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -19,19 +21,21 @@ def is_acceptable_password(password: str) -> bool:
         
     return all([cond1, cond2, cond3, cond5])        
         </pre>
-        У цій місії тобі слід додати до розв'язку перевірку, що пароль містить
-        хоча б 3 різних символи.
+        <p>
+            У цій місії тобі слід додати до розв'язку перевірку, що пароль містить хоча б 3 різних символи.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        З чого мені почати?
+        <p>
+            З чого мені почати?
+        </p>
     </div>
     <div class="answer">
-        Щоб порахувати кількість елементів у якійсь послідовності, використай
-        функцію len() і результат має бути більший 2.
-    <br />
-    <br />
+        <p>
+            Щоб порахувати кількість елементів у якійсь послідовності, використай функцію <b class="code">len()</b> і результат має бути більший 2.
+        </p>
         <pre class="brush: python">
 cond6 = len(...) > 2        
         </pre>
@@ -39,46 +43,55 @@ cond6 = len(...) > 2
 </div>
 <div class="question-answer">
     <div class="question">
-        Добре. Але ж мені слід порахувати лише унікальні елементи. Як це зробити?
+        <p>
+            Добре. Але ж мені слід порахувати лише унікальні елементи. Як це зробити?
+        </p>
     </div>
     <div class="answer">
-        Прочитай про <a target="_blank" href="https://www.w3schools.com/python/python_sets.asp">множини</a>.
-        Вони зберігають лише унікальні елементи.
-        <br />
-        <br />
+        <p>
+            Прочитай про <a target="_blank" href="https://www.w3schools.com/python/python_sets.asp">множини</a>. Вони зберігають лише унікальні елементи.
+        </p>
         <pre class="brush: python">
 ar = [1, 2, 3, 2, 3]
 print(set(ar))
         </pre>
         <div class="output">
-            <p>Output:</p>
+            <p>Вивід:</p>
             <pre>{1, 2, 3}</pre>
         </div>
-        Тобі слід створити множину з твого пароля і використати її як аргументи в len().
+        <p>
+            Тобі слід створити множину з твого пароля і використати її як аргументи в <b class="code">len()</b>.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Покажи мені весь вираз будь ласка.
+        <p>
+            Покажи мені весь вираз будь ласка.
+        </p>
     </div>
     <div class="answer">
-        Дивись:
-    <br />
-    <br />
+        <p>
+            Дивись:
+        </p>
         <pre class="brush: python">
 cond6 = len(set(password)) > 2        
         </pre>
-        І не забудь додати твою нову умову в функцію all() в return.
+        <p>
+            І не забудь додати твою нову умову в функцію <b class="code">all()</b> в <b class="code">return</b>.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        То як мій остаточний розв'язок має виглядати?
+        <p>
+            То як мій остаточний розв'язок має виглядати?
+        </p>
     </div>
     <div class="answer">
-        Ось він:
-        <br />
-        <br />
+        <p>
+            Ось він:
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
     
@@ -96,15 +109,18 @@ def is_acceptable_password(password: str) -> bool:
 </div>
 <div class="question-answer">
     <div class="question">
-        Покажи мені більше розв'язків!<br />
-        Адже я хочу стати справжнім Python Ніндзею!
+        <p>
+            Покажи мені більше розв'язків!<br />
+            Адже я хочу стати справжнім Python Ніндзею!
+        </p>
     </div>
     <div class="answer">
-        Звісно, тримай!<br />
-        Використання словника для зберігання умов у вигляді тексту як ключів і 
-        умовних виразів як значень.
-        <br />
-        <br />
+        <p>
+            Звісно, тримай!
+        </p>
+        <p>
+            Використання словника для зберігання умов у вигляді тексту як ключів і умовних виразів як значень.
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -120,10 +136,9 @@ def is_acceptable_password(password: str) -> bool:
 
     return all(conditions.values())
         </pre>
-        Якщо тобі досі потрібні всі функції перевірки. Використання попередньої
-        функції у наступній із додаванням нової умови:
-        <br />
-        <br />
+        <p>
+            Якщо тобі досі потрібні всі функції перевірки. Використання попередньої функції у наступній із додаванням нової умови:
+        </p>
         <pre class="brush: python">            
 def is_acceptable_passwordI(password: str) -> bool:
     return len(password) > 6
@@ -143,11 +158,9 @@ def is_acceptable_passwordV(password):
 def is_acceptable_password(password):
     return is_acceptable_passwordV(password) and len(set(list(password))) >= 3
         </pre>
-        Використання модуля регулярних виразів, пошук рядка із довжиною більше 6,
-        з цифрою і буквою або рядка довжиною більше 9. В обох варіантах рядок не
-        повинен містити слово 'password'.
-        <br />
-        <br />
+        <p>
+            Використання модуля регулярних виразів, пошук рядка із довжиною більше 6, з цифрою і буквою або рядка довжиною більше 9. В обох варіантах рядок не повинен містити слово 'password'.
+        </p>
         <pre class="brush: python">
 import re
 
@@ -158,15 +171,21 @@ def is_acceptable_password(p):
     bool(re.match(r'.{9,}', p))) and not bool(re.search(r'(?i)password', p)) \
     and len(set(p)) >= 3        
         </pre>
-        Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
+        <p><b>
+            Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
+        </b></p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Дякую! Тепер я знаю і розумію більше! Все працює як слід!
+        <p>
+            Дякую! Тепер я знаю і розумію більше! Все працює як слід!
+        </p>
     </div>
     <div class="answer">
-        Приємно це чути! Мої вітання із завершенням серії!
+        <p>
+            Приємно це чути! Мої вітання із завершенням серії!
+        </p>
     </div>
 </div>
 </body>

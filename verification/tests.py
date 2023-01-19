@@ -76,12 +76,12 @@ TESTS = {
         {
             "input": ["aaaaaaabbaaaaaaaab"],
             "answer": False
-        }
+        },
     ],
     "Extra": [
         {
             "input": ["this is password"],
             "answer": False
-        }
+        },
     ]
 }

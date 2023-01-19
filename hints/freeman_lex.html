@@ -1,13 +1,14 @@
 <body data-author="freeman_lex">
 <div class="question-answer">
     <div class="question">
-        I have no idea how to start solving this mission.
+        <p>
+            I have no idea how to start solving this mission.
+        </p>
     </div>
     <div class="answer">
-        Let's continue with the solution from hints of the previous mission in
-        the series.
-        <br />
-        <br />
+        <p>
+            Let's continue with the solution from hints of the previous mission in the series.
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -20,19 +21,21 @@ def is_acceptable_password(password: str) -> bool:
         
     return all([cond1, cond2, cond3, cond5])        
         </pre>
-        In this mission you should add to this solution checking if password
-        contains at least three distinct characters.
+        <p>
+            In this mission you should add to this solution checking if password contains at least three distinct characters.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        What should I start from?
+        <p>
+            What should I start from?
+        </p>
     </div>
     <div class="answer">
-        To count the number of elements in sequence just use len() function and 
-        it should be bigger then 2.
-    <br />
-    <br />
+        <p>
+            To count the number of elements in sequence just use <b class="code">len()</b> function and it should be bigger then 2.
+        </p>
         <pre class="brush: python">
 cond6 = len(...) > 2        
         </pre>
@@ -40,13 +43,14 @@ cond6 = len(...) > 2
 </div>
 <div class="question-answer">
     <div class="question">
-        Ok. But I need to count only unique elements. How to do this?
+        <p>
+            Ok. But I need to count only unique elements. How to do this?
+        </p>
     </div>
     <div class="answer">
-        Read about <a target="_blank" href="https://www.w3schools.com/python/python_sets.asp">sets</a>.
-        It allows only distinct elements.
-        <br />
-        <br />
+        <p>
+            Read about <a target="_blank" href="https://www.w3schools.com/python/python_sets.asp">sets</a>. It allows only distinct elements.
+        </p>
         <pre class="brush: python">
 ar = [1, 2, 3, 2, 3]
 print(set(ar))
@@ -55,31 +59,39 @@ print(set(ar))
             <p>Output:</p>
             <pre>{1, 2, 3}</pre>
         </div>
-        You should create set from your password and use it as argument in len().
+        <p>
+            You should create set from your password and use it as argument in <b class="code">len()</b>.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Show me the whole line please.
+        <p>
+            Show me the whole line please.
+        </p>
     </div>
     <div class="answer">
-        Look:
-    <br />
-    <br />
+        <p>
+            Look:
+        </p>
         <pre class="brush: python">
 cond6 = len(set(password)) > 2        
         </pre>
-        And don't forget to add your new condition into all() function in return.
+        <p>
+            And don't forget to add your new condition into <b class="code">all()</b> function in <b class="code">return</b>.
+        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        So, how my final solution should look like?
+        <p>
+            So, how my final solution should look like?
+        </p>
     </div>
     <div class="answer">
-        Here it is:
-        <br />
-        <br />
+        <p>
+            Here it is:
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
     
@@ -97,15 +109,18 @@ def is_acceptable_password(password: str) -> bool:
 </div>
 <div class="question-answer">
     <div class="question">
-        Show me more solutions!<br />
-        'Cause I wanna be a real Python Ninnjaa!
+        <p>
+            Show me more solutions!<br />
+            'Cause I wanna be a real Python Ninnjaa!
+        </p>
     </div>
     <div class="answer">
-        Sure, grab it!<br />
-        Using dictionary to store conditions in text as keys, and conditional
-        expressions as values.
-        <br />
-        <br />
+        <p>
+            Sure, grab it!
+        </p>
+        <p>
+            Using dictionary to store conditions in text as keys, and conditional expressions as values.
+        </p>
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -121,10 +136,9 @@ def is_acceptable_password(password: str) -> bool:
 
     return all(conditions.values())
         </pre>
-        If you still need all checking functions. Using previous function in next
-        adding new condition:
-        <br />
-        <br />
+        <p>
+            If you still need all checking functions. Using previous function in next adding new condition:
+        </p>
         <pre class="brush: python">            
 def is_acceptable_passwordI(password: str) -> bool:
     return len(password) > 6
@@ -144,11 +158,9 @@ def is_acceptable_passwordV(password):
 def is_acceptable_password(password):
     return is_acceptable_passwordV(password) and len(set(list(password))) >= 3
         </pre>
-        Using regular expressions module, look for substring bigger then 6, with
-        digit and not digit character or substring bigger then 9. Both should not 
-        contain 'password'.
-        <br />
-        <br />
+        <p>
+            Using regular expressions module, look for substring bigger then 6, with digit and not digit character or substring bigger then 9. Both should not contain 'password'.
+        </p>
         <pre class="brush: python">
 import re
 
@@ -159,16 +171,22 @@ def is_acceptable_password(p):
     bool(re.match(r'.{9,}', p))) and not bool(re.search(r'(?i)password', p)) \
     and len(set(p)) >= 3        
         </pre>
-        Click "Best solutions" at mission menu and see a lot of other
+        <p><b>
+            Click "Best solutions" at mission menu and see a lot of other
         interesting solutions!
+        </b></p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Thanks! I know and understand more now! Everything works fine!
+        <p>
+            Thanks! I know and understand more now! Everything works fine!
+        </p>
     </div>
     <div class="answer">
-        Glad to hear it! Congratulations on passing the series!
+        <p>
+            Glad to hear it! Congratulations on passing the series!
+        </p>
     </div>
 </div>
 </body>
