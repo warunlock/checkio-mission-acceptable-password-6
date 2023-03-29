@@ -92,6 +92,7 @@ cond6 = len(set(password)) > 2
         <p>
             Ось він:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
     
@@ -105,6 +106,7 @@ def is_acceptable_password(password: str) -> bool:
         
     return all([cond1, cond2, cond3, cond5, cond6])     
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -121,6 +123,7 @@ def is_acceptable_password(password: str) -> bool:
         <p>
             Використання словника для зберігання умов у вигляді тексту як ключів і умовних виразів як значень.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -136,9 +139,11 @@ def is_acceptable_password(password: str) -> bool:
 
     return all(conditions.values())
         </pre>
+        </div>
         <p>
             Якщо тобі досі потрібні всі функції перевірки. Використання попередньої функції у наступній із додаванням нової умови:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">            
 def is_acceptable_passwordI(password: str) -> bool:
     return len(password) > 6
@@ -158,9 +163,11 @@ def is_acceptable_passwordV(password):
 def is_acceptable_password(password):
     return is_acceptable_passwordV(password) and len(set(list(password))) >= 3
         </pre>
+        </div>
         <p>
             Використання модуля регулярних виразів, пошук рядка із довжиною більше 6, з цифрою і буквою або рядка довжиною більше 9. В обох варіантах рядок не повинен містити слово 'password'.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 import re
 
@@ -171,6 +178,7 @@ def is_acceptable_password(p):
     bool(re.match(r'.{9,}', p))) and not bool(re.search(r'(?i)password', p)) \
     and len(set(p)) >= 3        
         </pre>
+        </div>
         <p><b>
             Тисни "Best solutions" в меню місії і ти побачиш багато інших цікавих розв'язків!
         </b></p>
