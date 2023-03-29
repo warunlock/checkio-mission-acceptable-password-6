@@ -92,6 +92,7 @@ cond6 = len(set(password)) > 2
         <p>
             Here it is:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
     
@@ -105,6 +106,7 @@ def is_acceptable_password(password: str) -> bool:
         
     return all([cond1, cond2, cond3, cond5, cond6])     
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -121,6 +123,7 @@ def is_acceptable_password(password: str) -> bool:
         <p>
             Using dictionary to store conditions in text as keys, and conditional expressions as values.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def is_acceptable_password(password: str) -> bool:
 
@@ -136,9 +139,11 @@ def is_acceptable_password(password: str) -> bool:
 
     return all(conditions.values())
         </pre>
+        </div>
         <p>
             If you still need all checking functions. Using previous function in next adding new condition:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">            
 def is_acceptable_passwordI(password: str) -> bool:
     return len(password) > 6
@@ -158,9 +163,11 @@ def is_acceptable_passwordV(password):
 def is_acceptable_password(password):
     return is_acceptable_passwordV(password) and len(set(list(password))) >= 3
         </pre>
+        </div>
         <p>
             Using regular expressions module, look for substring bigger then 6, with digit and not digit character or substring bigger then 9. Both should not contain 'password'.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 import re
 
@@ -171,6 +178,7 @@ def is_acceptable_password(p):
     bool(re.match(r'.{9,}', p))) and not bool(re.search(r'(?i)password', p)) \
     and len(set(p)) >= 3        
         </pre>
+        </div>
         <p><b>
             Click "Best solutions" at mission menu and see a lot of other
         interesting solutions!
